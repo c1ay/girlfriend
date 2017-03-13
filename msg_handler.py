@@ -4,14 +4,14 @@ import requests
 from itchat.content import *
 
 ROBOT_API = 'http://www.tuling123.com/openapi/api'
-API_KEY = '***'
+API_KEY = '****'
 DEFAULT_CITY = '成都市'
 
 
 @itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING])
 def text_reply(msg):
     params = {
-        'key': 'e5bee95b8bb04e5c9f4a1b900c19cca4',
+        'key': API_KEY,
         'info': msg['Text'],
         'loc': DEFAULT_CITY,
         'userid': msg['FromUserName']
