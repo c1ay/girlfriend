@@ -1,5 +1,5 @@
 # coding:utf-8
+from msg_handler import server
 
-
-def server():
-    pass
+if __name__ == '__main__':
+    server()
