@@ -1,27 +1,29 @@
 # coding:utf-8
-import itchat
+import itchatmp
 import requests
-from itchat.content import *
 
 ROBOT_API = 'http://www.tuling123.com/openapi/api'
 API_KEY = '****'
 DEFAULT_CITY = '成都市'
 
 
-@itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING])
+itchatmp.update_config(itchatmp.WechatConfig(
+    token='', appId='', appSecret=''
+))
+
+
+@itchatmp.msg_register(itchatmp.content.TEXT)
 def text_reply(msg):
-    params = {
+    data = {
         'key': API_KEY,
-        'info': msg['Text'],
+        'info': msg['Content'],
         'loc': DEFAULT_CITY,
-        'userid': msg['FromUserName']
+        'userid': ''
     }
-    res = requests.post(ROBOT_API, json=params)
-    text = res.json()['text']
-    itchat.send('test: {}'.format(text))
-    return 'test: {}'.format(text)
+    ret = requests.post(ROBOT_API, json=data)
+    text = ret.json()['text']
+    return text
 
 
 def server():
-    itchat.auto_login(True)
-    itchat.run()
+    itchatmp.run()
