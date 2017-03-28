@@ -1,5 +1,5 @@
 # coding:utf-8
-import itchatmp
+import itchat
 import requests
 
 ROBOT_API = 'http://www.tuling123.com/openapi/api'
@@ -7,12 +7,12 @@ API_KEY = '****'
 DEFAULT_CITY = '成都市'
 
 
-itchatmp.update_config(itchatmp.WechatConfig(
+itchat.update_config(itchat.WechatConfig(
     token='', appId='', appSecret=''
 ))
 
 
-@itchatmp.msg_register(itchatmp.content.TEXT)
+@itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
     data = {
         'key': API_KEY,
@@ -26,4 +26,4 @@ def text_reply(msg):
 
 
 def server():
-    itchatmp.run()
+    itchat.run()
