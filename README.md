@@ -8,8 +8,9 @@
 pip install -r requirements.txt
 ```
 
-### 配置 setting.py
+### 配置
 
+按照注释填写setting.py, 图灵机器人key需自己申请
 
 ### 运行
 
