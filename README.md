@@ -1,5 +1,20 @@
 # wechat-robot
 
-- 回复消息，调用AI（暂时用图灵的api）
-- 关于日程的提醒
-- 一些消息的推送
+- 微信号自动回复
+
+### 依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+### 配置 setting.py
+
+
+### 运行
+
+```python
+python server.py
+```
+
+扫描命令行出现的二维码
