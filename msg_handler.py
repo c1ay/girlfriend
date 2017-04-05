@@ -14,6 +14,7 @@ itchat.update_config(itchat.WechatConfig(
 
 @itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
+    """reply text"""
     data = {
         'key': API_KEY,
         'info': msg['Content'],
